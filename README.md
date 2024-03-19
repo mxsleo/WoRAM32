@@ -1,5 +1,5 @@
 # WoRAM32
-A simple program designed to read answers from the Project1.exe tests
+A simple program written in pure WinAPI designed to read answers from the Project1.exe tests
 
 # Usage
 - Download the program from the Releases section
