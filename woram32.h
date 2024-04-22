@@ -10,15 +10,15 @@
 #define W32_CLASS       "Woram32MainClass"
 #define W32_TITLE       "iexplore"
 #define W32_SZGRID      16
-#define W32_SZSTATIC    W32_SZGRID * 6
-#define W32_SZY         W32_SZGRID * 2
-#define W32_SZX         W32_SZGRID + W32_SZSTATIC * 2
-#define W32_POSX        (GetSystemMetrics(SM_CXSCREEN) - W32_SZX) / 2
-#define W32_POSY        (GetSystemMetrics(SM_CYSCREEN) - W32_SZY) / 2
+#define W32_SZSTATIC    (W32_SZGRID * 6)
+#define W32_SZY         (W32_SZGRID * 2)
+#define W32_SZX         (W32_SZGRID + W32_SZSTATIC * 2)
+#define W32_POSX        ((GetSystemMetrics(SM_CXSCREEN) - W32_SZX) / 2)
+#define W32_POSY        ((GetSystemMetrics(SM_CYSCREEN) - W32_SZY) / 2)
 #define W32_OPACITY     32
 #define W32_OPA_STEP    8
 #define W32_OPA_MIN     W32_OPA_STEP
-#define W32_OPA_MAX     256 - W32_OPA_STEP
+#define W32_OPA_MAX     (256 - W32_OPA_STEP)
 #define W32_TEXT_SMALL  10
 #define W32_TEXT_LARGE  12
 #define W32_CSSHORTLEN  8
