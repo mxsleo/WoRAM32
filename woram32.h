@@ -10,8 +10,9 @@
 #define W32_CLASS       "Woram32MainClass"
 #define W32_TITLE       "iexplore"
 #define W32_SZGRID      16
+#define W32_SZSTATIC    W32_SZGRID * 4
 #define W32_SZY         W32_SZGRID * 2
-#define W32_SZX         W32_SZGRID * 8
+#define W32_SZX         W32_SZGRID + W32_SZSTATIC * 2
 #define W32_POSX        (GetSystemMetrics(SM_CXSCREEN) - W32_SZX) / 2
 #define W32_POSY        (GetSystemMetrics(SM_CYSCREEN) - W32_SZY) / 2
 #define W32_OPACITY     32
@@ -21,12 +22,13 @@
 #define W32_TEXT_SMALL  10
 #define W32_TEXT_LARGE  12
 #define W32_CSSHORTLEN  8
-#define W32_CSLONGLEN   256
+#define W32_CSLONGLEN   64
+#define VAL_AMT 4
 
 UINT32 woram32MainOpacity = W32_OPACITY;
 
 HWND hNum;
-HWND hOut;
+HWND hOut[4];
 
 LRESULT CALLBACK Woram32MainProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
 void Woram32MainAddWidgets(HWND hWnd);
@@ -41,7 +43,6 @@ DWORD WINAPI Woram32MainSpook(LPVOID lpParameter);
 #define PROCESS "Project1.exe"
 #define PROCALT "ProjectModul4.exe"
 
-#define VAL_AMT 4
 #define SET_AMT 12
 UINT32 const VALUE_POINTERS[SET_AMT][VAL_AMT] = {
     {0x479C14, 0x479C1C, 0x479C24, 0x479C2C},
