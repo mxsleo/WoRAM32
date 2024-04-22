@@ -9,8 +9,9 @@
 
 #define W32_CLASS       "Woram32MainClass"
 #define W32_TITLE       "iexplore"
-#define W32_SZY         16
-#define W32_SZX         160 + W32_SZY
+#define W32_SZGRID      16
+#define W32_SZY         W32_SZGRID
+#define W32_SZX         W32_SZGRID * 11
 #define W32_POSX        (GetSystemMetrics(SM_CXSCREEN) - W32_SZX) / 2
 #define W32_POSY        (GetSystemMetrics(SM_CYSCREEN) - W32_SZY) / 2
 #define W32_OPACITY     32
