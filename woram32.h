@@ -10,7 +10,7 @@
 #define W32_CLASS       "Woram32MainClass"
 #define W32_TITLE       "iexplore"
 #define W32_SZGRID      16
-#define W32_SZSTATIC    W32_SZGRID * 4
+#define W32_SZSTATIC    W32_SZGRID * 6
 #define W32_SZY         W32_SZGRID * 2
 #define W32_SZX         W32_SZGRID + W32_SZSTATIC * 2
 #define W32_POSX        (GetSystemMetrics(SM_CXSCREEN) - W32_SZX) / 2
