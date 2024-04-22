@@ -143,7 +143,7 @@ void Woram32MainAddWidgets(HWND hWnd) {
     HFONT hFontOut = CreateFont(-W32_TEXT_LARGE, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, FIXED_PITCH | FF_MODERN, NULL);
 
     hNum = CreateWindow("static", "99", WS_VISIBLE | WS_CHILD | ES_RIGHT, 0, 0, W32_SZGRID, W32_SZGRID, hWnd, NULL, NULL, NULL);
-    hOut = CreateWindow("static", "-99.99 -99.99 -99.99 -99.99", WS_VISIBLE | WS_CHILD | ES_CENTER, W32_SZGRID, 0, W32_SZX - W32_SZGRID, W32_SZY, hWnd, NULL, NULL, NULL);
+    hOut = CreateWindow("static", "-99.99 -99.99\n-99.99 -99.99", WS_VISIBLE | WS_CHILD | ES_CENTER, W32_SZGRID, 0, W32_SZX - W32_SZGRID, W32_SZY, hWnd, NULL, NULL, NULL);
 
     SendMessage(hNum, WM_SETFONT, (WPARAM)hFontNum, TRUE);
     SendMessage(hOut, WM_SETFONT, (WPARAM)hFontOut, TRUE);
@@ -189,7 +189,14 @@ DWORD WINAPI Woram32MainSpook(LPVOID lpParameter) {
 
         sprintf_s(out, "%.2f", values[0]);
         for (size_t i = 1; i < VAL_AMT; ++i) {
-            sprintf_s(out, "%s %.2f", out, values[i]);
+
+            if (i * 2 == VAL_AMT)
+                strcat_s(out, "\n");
+            else
+                strcat_s(out, " ");
+
+            sprintf_s(out, "%s%.2f", out, values[i]);
+
         }
 
         SetWindowText(hOut, out);
