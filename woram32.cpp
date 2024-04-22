@@ -192,7 +192,7 @@ DWORD WINAPI Woram32MainSpook(LPVOID lpParameter) {
         }
 
         for (size_t i = 0; i < VAL_AMT; ++i) {
-            sprintf_s(out, "%.2f ", values[i]);
+            sprintf_s(out, "%g ", values[i]);
             SetWindowText(hOut[i], out);
         }
 
